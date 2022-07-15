@@ -24,19 +24,13 @@ export interface IJwtAccessToken {
   }
 }
 
-export enum AccountOptions {
-  Basic = "basic",
-  Free = "free",
-  Gold = "gold",
-}
-
 export enum AccountStatus {
   Active = "active",
   Banned = "banned",
   Blocked = "blocked",
   Cancelled = "cancelled",
-  Created = "created",
-  Pending = "pending",
+  CREATED = "created",
+  PENDING = "pending",
 }
 
 export enum HTTPStatusCode {
@@ -88,10 +82,4 @@ export enum UserRole {
   SELLER = "user:seller",
   PRIVATE_DEALER = "user:private-dealer",
   ADMIN = "internal:admin",
-}
-
-export enum AccountStatus {
-  CREATED = "created",
-  VERIFIED = "verified",
-  PENDING = "pending",
 }
