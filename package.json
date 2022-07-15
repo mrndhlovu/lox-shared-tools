@@ -1,6 +1,6 @@
 {
   "name": "@loxodonta/shared-tools",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Internal shared tools",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -32,7 +32,7 @@
   "files": [
     "build/**/*"
   ],
-    "publishConfig": {
+  "publishConfig": {
     "access": "public"
   }
 }
