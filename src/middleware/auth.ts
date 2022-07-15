@@ -2,14 +2,14 @@ import { Response, NextFunction, Request } from "express"
 import { validationResult } from "express-validator"
 import jwt from "jsonwebtoken"
 import { errorService } from "../services/error"
-import { ICurrentSessionData, IJwtAuthToken } from "../types"
+import { ICurrentSessionData, ICurrentUserAccessJWT } from "../types"
 import { RequestValidationError, NotAuthorisedError } from "../services/error"
 import { NOT_AUTHORISED } from "../helpers/constants"
 
 declare global {
   namespace Express {
     interface Request {
-      currentUserJwt: IJwtAuthToken
+      currentUserJwt: ICurrentUserAccessJWT
       session?: ICurrentSessionData
     }
   }
@@ -35,7 +35,7 @@ class AuthMiddleWare {
         throw new NotAuthorisedError("token failed validation")
       }
 
-      req.currentUserJwt = currentUserJwt as IJwtAuthToken
+      req.currentUserJwt = currentUserJwt as ICurrentUserAccessJWT
       next()
 
       return this
@@ -81,7 +81,7 @@ class AuthMiddleWare {
         throw new NotAuthorisedError("token failed validation")
       }
 
-      req.currentUserJwt = currentUserJwt as IJwtAuthToken
+      req.currentUserJwt = currentUserJwt as ICurrentUserAccessJWT
 
       next()
     }
