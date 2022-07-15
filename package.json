@@ -6,7 +6,7 @@
   "types": "./build/index.d.ts",
   "scripts": {
     "clean": "del ./build/*",
-    "build": "yarn run clean && tsc",
+    "build": "npm run clean && tsc",
     "pub": "git add . && git commit -m \"Updates\" && git push origin main && npm version patch && npm run build",
     "release": "release-it"
   },
