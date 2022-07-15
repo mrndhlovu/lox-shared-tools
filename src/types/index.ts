@@ -25,10 +25,10 @@ export interface IJwtAccessToken {
 }
 
 export enum AccountStatus {
-  Active = "active",
-  Banned = "banned",
-  Blocked = "blocked",
-  Cancelled = "cancelled",
+  ACTIVE = "active",
+  BANNED = "banned",
+  BLOCKED = "blocked",
+  CANCELLED = "cancelled",
   CREATED = "created",
   PENDING = "pending",
 }
