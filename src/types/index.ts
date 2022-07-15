@@ -71,7 +71,7 @@ export enum HTTPStatusCode {
 
 export interface ICurrentSessionData {
   jwt: IJwtAuthToken
-} 
+}
 
 export interface IRequestError {
   message: string
@@ -83,3 +83,15 @@ export type IAsyncRequestHandler = (
   res: Response,
   next: NextFunction
 ) => Promise<any>
+
+export enum UserRole {
+  SELLER = "user:seller",
+  PRIVATE_DEALER = "user:private-dealer",
+  ADMIN = "internal:admin",
+}
+
+export enum AccountStatus {
+  CREATED = "created",
+  VERIFIED = "verified",
+  PENDING = "pending",
+}
