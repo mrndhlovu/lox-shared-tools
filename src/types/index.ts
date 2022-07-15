@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express"
 
-export interface IJwtAuthToken {
+export interface ISessionJwtToken {
   access: string
   refresh?: string
   mfa?: string
@@ -12,7 +12,7 @@ export enum JwtSignatures {
   USER_ROLE = "role",
 }
 
-export interface IJwtAccessToken {
+export interface ICurrentUserAccessJWT {
   userId?: string
   username: string
   name?: string
@@ -64,7 +64,7 @@ export enum HTTPStatusCode {
 }
 
 export interface ICurrentSessionData {
-  jwt: IJwtAuthToken
+  jwt: ISessionJwtToken
 }
 
 export interface IRequestError {
